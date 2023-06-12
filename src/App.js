@@ -1,26 +1,49 @@
 import React from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import Home from './components/pages/Home'
-import Contact from './components/pages/Contact'
-import Navbar from './components/layout/Navbar';
-import{BrowserRouter as Router,Routes ,Route} from"react-router-dom";
-import About from './components/pages/About';
+import Navbar2 from './components/layout/Navbar2';
+import Home2 from './components/pages/Home2';
+import Contact2 from './components/pages/Contact2'
+import Login2 from './components/pages/Login/Login2'
+import Addcoupon from './components/pages/Addcoupon'
+import Singlecoupon from './components/pages/Singlecoupon'
+//import Giftcard from './components/pages/Giftcard';
 import Errorpage from './components/pages/Errorpage';
-import EmpListing from './components/pages/Datadisplay'
-import Empcreate from './components/pages/Empcreate';
-import Empdetails from './components/pages/Empdetails';
-import Empedit from './components/pages/Empedit';
-import Login from './components/login/Login';
 
-
+import{BrowserRouter as Router,Routes ,Route} from"react-router-dom";
 
 function App() {
+
+const isloggedIn = window.localStorage.getItem("loggedIn")
+
+
   return (
     <>
-   <Router>
+<Router>
+<div className='App'>
+   
+       <Navbar2/>
+
+       <Routes>
+          <Route path="/" element={isloggedIn=="true"? <Home2/>:<Login2/>} ></Route>      
+          {/* <Route path="/" element={<Home2/>} ></Route>       */}
+          <Route path="/contact2" element={<Contact2/>} ></Route>
+          <Route path="/login2" element={<Login2/>} ></Route>
+          <Route path="/addcoupon" element={<Addcoupon/>} ></Route>
+          <Route path="/singlecoupon" element={<Singlecoupon/>} ></Route>
+          <Route path="*" element={<Errorpage/>}></Route>
+          
+          
+       </Routes>
+    
+   
+       </div> 
+</Router>
+
+
+   {/* <Router>
    
    <div className='App'>
-   {/* title string ma hse jo number apaso to error avase */}
+   #title string ma hse jo number apaso to error avase
        <Navbar title="~ CRUD SYSTEM :)" />
 
        <Routes>
@@ -38,7 +61,7 @@ function App() {
     
    
        </div> 
-   </Router>
+   </Router> */}
    
     
     </>
