@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 import logo from './logo.png';
 
 export const Navbar2 = () => {
+
+  const isloggedIn = window.localStorage.getItem("loggedIn")
+
+  const [hidden, setHidden] = useState(false)
+  
+  useEffect(()=>{
+    isloggedIn ? setHidden(true) : setHidden(false)
+    console.log("isLoggedin : ",isloggedIn)
+  },[isloggedIn])
+
+  //clear local storage token & isloggedIn
+const logout=()=>{
+  window.localStorage.clear();
+  window.location.href="/"
+  }
+
   return (
     <>
       <header>
@@ -25,7 +41,10 @@ export const Navbar2 = () => {
               <Link className="nav-link" to="/Contact2">Contact</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login2"> Login </Link>
+              {/* <Link className="nav-link" to="/login2"> Login </Link> */}
+              {!hidden ?  <button  className="btn btn-primary"  href="#coupons">Login</button> : <button  onClick={logout} className="btn btn-primary" href="#coupons">Logout</button>}
+             
+              
             </li>
           
           </ul>

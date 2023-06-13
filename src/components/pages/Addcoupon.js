@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Addcoupon = () => {
   const [companyName, companyNamechange] = useState("");
@@ -7,7 +8,7 @@ const Addcoupon = () => {
   const [expiryDate, expiryDatechange] = useState("");
   const [profit, profitchange] = useState("");
 
-
+const Navigate= useNavigate();
 
   const HandleAddgiftcard = (e) => {
     e.preventDefault();
@@ -39,6 +40,7 @@ else{
   data.then((response) => console.log(response));
         window.alert("Gift card Added Successfully");
         // window.location.href = "/";
+        Navigate('/');
 }
         
       })

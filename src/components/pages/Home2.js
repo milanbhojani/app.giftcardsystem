@@ -23,7 +23,7 @@ const navigate = useNavigate();
       const data = await res.json();
       console.log("rootuser",data.data2);
 
-      console.log(data);
+      // console.log(data);
       setuserData(data.data);  
 
       if(!res.status === 200){

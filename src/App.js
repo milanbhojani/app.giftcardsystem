@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Navbar2 from './components/layout/Navbar2';
 import Home2 from './components/pages/Home2';
@@ -13,8 +13,13 @@ import{BrowserRouter as Router,Routes ,Route} from"react-router-dom";
 
 function App() {
 
-const isloggedIn = window.localStorage.getItem("loggedIn")
+// const [login , setLogin] = useState(false)
+// const isloggedIn = Boolean(window.localStorage.getItem("loggedIn"))
+// useEffect(()=>{
+//   isloggedIn ? setLogin(true) : setLogin(false)
+// },[isloggedIn])
 
+const isloggedIn=window.localStorage.getItem("loggedIn")
 
   return (
     <>
@@ -24,7 +29,7 @@ const isloggedIn = window.localStorage.getItem("loggedIn")
        <Navbar2/>
 
        <Routes>
-          <Route path="/" element={isloggedIn=="true"? <Home2/>:<Login2/>} ></Route>      
+          <Route path="/" element={isloggedIn ? <Home2/>:<Login2/>} ></Route>      
           {/* <Route path="/" element={<Home2/>} ></Route>       */}
           <Route path="/contact2" element={<Contact2/>} ></Route>
           <Route path="/login2" element={<Login2/>} ></Route>

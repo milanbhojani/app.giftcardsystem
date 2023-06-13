@@ -63,6 +63,7 @@ else{
   window.alert('Login Successfully')
   console.log("Login Success From APP",userdata)
  window.location.href="/";
+// Navigate('/');
 }
        
         
