@@ -11,16 +11,17 @@ const Addcoupon = () => {
 
   const HandleAddgiftcard = (e) => {
     e.preventDefault();
+    let token = localStorage.getItem("root:data");
 
-    const giftcarddata = { companyName, category, amount, expiryDate, profit };
+    const giftcarddata = { companyName, category, amount, expiryDate, profit ,token };
 
   
     fetch("http://localhost:4000/addgiftcard", {
       method: "POST",
-      // headers: { "Content-Type": "application/json" },
-      headers: {"Authorization" : localStorage.getItem("root:data")},
+      headers: { "Content-Type": "application/json" },
+      // headers: {"Authorization" : localStorage.getItem("root:data")},
       body: JSON.stringify(giftcarddata),
-      token : localStorage.getItem("root:data")
+      // token :)
     })
       .then((res) => {
         
@@ -61,7 +62,7 @@ else{
               <div className="add-coupon-form card-header">
                 <h2>Name:{}</h2>
                 <h2>Add Coupon</h2>
-                <form className="card-body" onSubmit={HandleAddgiftcard}>
+                <form className="card-body" method="post" onSubmit={HandleAddgiftcard}>
                   <div className="form-group">
                     <label htmlFor="company-name">Company Name</label>
                     <input
@@ -85,7 +86,7 @@ else{
                       className="form-control"
                       id="category"
                     >
-                      <option value="shoes">Shoes</option>
+                      <option defaultChecked value="shoes">Shoes</option>
                       <option value="food">Food</option>
                       <option value="clothes">Clothes</option>
                       <option value="bags">Bags</option>
