@@ -7,7 +7,7 @@ export const Navbar2 = () => {
   const isloggedIn = window.localStorage.getItem("loggedIn")
 
   const [hidden, setHidden] = useState(false)
-  
+
   useEffect(()=>{
     isloggedIn ? setHidden(true) : setHidden(false)
     console.log("isLoggedin : ",isloggedIn)
@@ -18,6 +18,9 @@ const logout=()=>{
   window.localStorage.clear();
   window.location.href="/"
   }
+  // window.onbeforeunload = () => {
+  //   window.localStorage.clear();
+  // }
 
   return (
     <>
@@ -35,7 +38,7 @@ const logout=()=>{
          
             <li className="nav-item">
               {/* <Link className="nav-link" to="/">Coupons</Link> */}
-              <a className="nav-link" href="/">Coupons</a>
+              <Link className="nav-link" to="/">Coupons</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Contact2">Contact</Link>

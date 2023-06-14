@@ -60,9 +60,9 @@ else{
 
         <div className="col-md-4">
           <section id="coupons" className="py-5">
-            <div id="content card">
+            <div id="content card ">
               <div className="add-coupon-form card-header">
-                <h2>Name:{}</h2>
+                
                 <h2>Add Coupon</h2>
                 <form className="card-body" method="post" onSubmit={HandleAddgiftcard}>
                   <div className="form-group">
@@ -91,22 +91,27 @@ else{
                       <option defaultChecked value="shoes">Shoes</option>
                       <option value="food">Food</option>
                       <option value="clothes">Clothes</option>
-                      <option value="bags">Bags</option>
-                      <option value="gift-card">Gift Card</option>
+                      <option value="Grocesory Items">Grocesory Items</option>
+                      <option value="Mobile Recharge">Mobile Recharge</option>
+                      <option value="Electronic Product">Electronic Product</option>
+                      <option value="Beauty Product">Beauty Product</option>
+                      <option value="gift-card">Gift-Card</option>
+                      <option value="Voucher">Voucher</option>
                       {/* Add more categories as needed */}
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="amount">Selling Amount</label>
+                    <label htmlFor="profit-amount">Profit Amount</label>
                     <input
                       required
-                      value={amount}
+                      value={profit}
                       onChange={(e) => {
-                        amountchange(e.target.value);
+                        profitchange(e.target.value);
                       }}
                       type="text"
                       className="form-control"
-                      placeholder="Enter amount"
+                      id="profit-amount"
+                      placeholder="Enter profit amount"
                     />
                   </div>
                   <div className="form-group">
@@ -124,19 +129,19 @@ else{
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="profit-amount">Profit Amount</label>
+                    <label htmlFor="amount">Selling Amount</label>
                     <input
                       required
-                      value={profit}
+                      value={amount}
                       onChange={(e) => {
-                        profitchange(e.target.value);
+                        amountchange(e.target.value);
                       }}
                       type="text"
                       className="form-control"
-                      id="profit-amount"
-                      placeholder="Enter profit amount"
+                      placeholder="Enter amount"
                     />
                   </div>
+                 
 {/* <input type="hidden" value={req.data.email}/> */}
                   <button type="submit" className="btn btn-primary btn-block">
                     Add Coupon

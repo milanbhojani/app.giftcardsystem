@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Navbar2 from './components/layout/Navbar2';
-import Home2 from './components/pages/Home2';
+import Home2 from './components/pages/Home/Home2';
 import Contact2 from './components/pages/Contact2'
 import Login2 from './components/pages/Login/Login2'
 import Addcoupon from './components/pages/Addcoupon'
