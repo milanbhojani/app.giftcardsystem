@@ -52,13 +52,13 @@ const Home2 = () => {
     fetch("http://localhost:4000/getgiftcard").then(
       (response) => {
         let result = response.json();
-        result.then(res =>  setGiftcarddata(res))
+        result.then((res) => setGiftcarddata(res));
       },
       (error) => {
         console.log(error);
       }
     );
-  },[]);
+  }, []);
   //end fetch giftcard data
 
   return (
@@ -90,90 +90,89 @@ const Home2 = () => {
           {/*card start */}
           <div className="container">
             <div className="row">
-            
-{giftcarddata &&
-  giftcarddata.map((item) => (
-    <div className="col-md-4">
-      <div className="card">
-        <div className="card-header">
-          <div className="d-flex align-items-center">
-            <img
-              src={user4}
-              className="rounded-circle mr-2"
-              alt="User Profile Icon"
-              style={{ width: "50px" }}
-            />
-            <h5 className="mb-0">Andry Max</h5>
-          </div>
-        </div>
-        <img
-          src={coupon1}
-          className="card-img-top"
-          alt="poster coupon"
-        />
-        <div className="card-body">
-          <h5 className="card-title">{item.companyName}</h5>
-          {/* <p className="card-caption">Caption of the product goes here.</p> */}
-          <p className="card-price">Profit {item.profit}</p>
-        </div>
-        <div id="detailsAccordion" className="collapse">
-         
-          <div className="card-body">
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <i className="fas fa-calendar-alt"></i> Expiry
-                Date: {item.expiryDate}
-              </li>
-              <li className="list-group-item">
-                <i className="fas fa-building"></i> Company:{" "}
-                {item.companyName}
-              </li>
-              <li className="list-group-item">
-                <i className="fas fa-dollar-sign"></i> Selling
-                Amount: {item.amount}
-              </li>
-              <li className="list-group-item">
-                <i className="fas fa-chart-line"></i> Profit
-                Amount: {item.profit}
-              </li>
-              <li className="list-group-item">
-                <i className="fas fa-tags"></i> Category:{" "}
-                {item.category}
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="card-footer">
-          <button
-            className="btn btn-primary btn-block"
-            data-toggle="collapse"
-            data-target="#detailsAccordion"
-          >
-            <i className="fas fa-info-circle"></i> See More
-          </button>
-        </div>
-        <div className="card-footer">
-          <div className="row">
-            <div className="col-sm-2">
-              <i className="far fa-heart like-btn"></i>
-            </div>
-            <div className="col-sm-8">
-              <input
-                type="text"
-                className="form-control comment-input"
-                placeholder="Add a comment..."
-              />
-            </div>
+              {giftcarddata &&
+                giftcarddata.map((item,i) => (
+                  <div className="col-md-4">
+                    <div className="card">
+                      <div className="card-header">
+                        <div className="d-flex align-items-center">
+                          <img
+                            src={user4}
+                            className="rounded-circle mr-2"
+                            alt="User Profile Icon"
+                            style={{ width: "50px" }}
+                          />
+                          <h5 className="mb-0">Andry Max</h5>
+                        </div>
+                      </div>
+                      <Link to="/singlecoupon" className="mb-4">
+                        <img
+                          src={coupon1}
+                          className="card-img-top"
+                          alt="poster coupon"
+                        />
+                      </Link>
+                      <div className="card-body">
+                        <h5 className="card-title">{item.companyName}</h5>
+                        {/* <p className="card-caption">Caption of the product goes here.</p> */}
+                        <p className="card-price">Profit {item.profit}</p>
+                      </div>
+                      <div id={`detailsAccordion${i}`} className="collapse">
+                        <div className="card-body">
+                          <ul className="list-group list-group-flush">
+                            <li className="list-group-item">
+                              <i className="fas fa-calendar-alt"></i> Expiry
+                              Date: {item.expiryDate}
+                            </li>
+                            <li className="list-group-item">
+                              <i className="fas fa-building"></i> Company:{" "}
+                              {item.companyName}
+                            </li>
+                            <li className="list-group-item">
+                              <i className="fas fa-dollar-sign"></i> Selling
+                              Amount: {item.amount}
+                            </li>
+                            <li className="list-group-item">
+                              <i className="fas fa-chart-line"></i> Profit
+                              Amount: {item.profit}
+                            </li>
+                            <li className="list-group-item">
+                              <i className="fas fa-tags"></i> Category:{" "}
+                              {item.category}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="card-footer">
+                        <button
+                          className="btn btn-primary btn-block"
+                          data-toggle="collapse"
+                          data-target={`#detailsAccordion${i}`}
+                        >
+                          <i className="fas fa-info-circle"></i> See More
+                        </button>
+                      </div>
+                      <div className="card-footer">
+                        <div className="row">
+                          <div className="col-sm-2">
+                            <i className="far fa-heart like-btn"></i>
+                          </div>
+                          <div className="col-sm-8">
+                            <input
+                              type="text"
+                              className="form-control comment-input"
+                              placeholder="Add a comment..."
+                            />
+                          </div>
 
-            <div className="col-sm-2">
-              <i className="fas fa-share share-btn"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  ))}
-
+                          <div className="col-sm-2">
+                            <i className="fas fa-share share-btn"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
           {/* card End */}

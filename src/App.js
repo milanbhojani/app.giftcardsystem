@@ -1,23 +1,17 @@
-import React, { useEffect, useState } from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import Navbar2 from './components/layout/Navbar2';
+import Navbar2 from './components/Layout/Navbar2';
 import Home2 from './components/pages/Home/Home2';
-import Contact2 from './components/pages/Contact2'
+import Contact2 from './components/pages/Contact/Contact2'
 import Login2 from './components/pages/Login/Login2'
-import Addcoupon from './components/pages/Addcoupon'
-import Singlecoupon from './components/pages/Singlecoupon'
+import Addcoupon from './components/pages/Coupon/Addcoupon'
+import Singlecoupon from './components/pages/Coupon/Singlecoupon'
 //import Giftcard from './components/pages/Giftcard';
-import Errorpage from './components/pages/Errorpage';
+import Errorpage from './components/pages/ErrorPage/Errorpage';
+import Chat from './components/Chat/Chat'
 
 import{BrowserRouter as Router,Routes ,Route} from"react-router-dom";
 
 function App() {
-
-// const [login , setLogin] = useState(false)
-// const isloggedIn = Boolean(window.localStorage.getItem("loggedIn"))
-// useEffect(()=>{
-//   isloggedIn ? setLogin(true) : setLogin(false)
-// },[isloggedIn])
 
 const isloggedIn=window.localStorage.getItem("loggedIn")
 
@@ -35,6 +29,8 @@ const isloggedIn=window.localStorage.getItem("loggedIn")
           <Route path="/login2" element={<Login2/>} ></Route>
           <Route path="/addcoupon" element={<Addcoupon/>} ></Route>
           <Route path="/singlecoupon" element={<Singlecoupon/>} ></Route>
+          <Route path="/chat" element={<Chat/>} ></Route>
+
           <Route path="*" element={<Errorpage/>}></Route>
           
           
