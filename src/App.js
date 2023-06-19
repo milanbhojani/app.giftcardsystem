@@ -1,5 +1,5 @@
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import Navbar2 from './components/Layout/Navbar2';
+import Navbar2 from '../src/components/layout/Navbar2';
 import Home2 from './components/pages/Home/Home2';
 import Contact2 from './components/pages/Contact/Contact2'
 import Login2 from './components/pages/Login/Login2'
