@@ -1,0 +1,58 @@
+ .containerx {
+      max-width: 400px;
+      margin: 0 auto;
+      padding-top: 100px;
+    }
+
+    .cardx {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-headerx {
+      background-color: #f8f9fa;
+      border-bottom: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .card-headerx img {
+      width: 100px;
+      height: 100px;
+      margin: 20px 0;
+    }
+
+    .card-bodyx {
+      padding: 20px;
+    }
+
+    .form-groupx {
+      margin-bottom: 20px;
+    }
+
+    .form-groupx label {
+      font-weight: bold;
+    }
+
+    .form-controlx:focus {
+      box-shadow: none;
+    }
+
+    .btn-primaryx {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primaryx:hover {
+      background-color: #0069d9;
+    }
+
+    .text-centerx {
+      margin-top: 20px;
+    }
+
+    .text-centerx a {
+      color: #007bff;
+    }
+  
