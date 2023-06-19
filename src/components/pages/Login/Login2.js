@@ -17,7 +17,7 @@ export const Login2 = () => {
       e.preventDefault();
       const userdata = {fullName,email,password}
   
-      fetch("http://localhost:4000/signup",{
+      fetch("https://api-giftcard.onrender.com/signup",{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify(userdata)
@@ -37,7 +37,7 @@ export const Login2 = () => {
     e.preventDefault();
     const userdata = {email,password}
 
-    fetch("http://localhost:4000/signin",{
+    fetch("https://api-giftcard.onrender.com/signin",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(userdata)

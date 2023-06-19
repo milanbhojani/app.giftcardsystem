@@ -17,7 +17,7 @@ const Navigate= useNavigate();
     const giftcarddata = { companyName, category, amount, expiryDate, profit ,token };
 
   
-    fetch("http://localhost:4000/addgiftcard", {
+    fetch("https://api-giftcard.onrender.com/addgiftcard", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       // headers: {"Authorization" : localStorage.getItem("root:data")},

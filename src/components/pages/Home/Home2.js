@@ -11,7 +11,7 @@ const Home2 = () => {
 
   const homepage = async () => {
     try {
-      const res = await fetch("http://localhost:4000/getdata", {
+      const res = await fetch("https://api-giftcard.onrender.com/getdata", {
         method: "GET",
         // headers: { "Content-Type": "application/json",
         headers: { Authorization: localStorage.getItem("root:data") },
@@ -49,7 +49,7 @@ const Home2 = () => {
   const [giftcarddata, setGiftcarddata] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:4000/getgiftcard").then(
+    fetch("https://api-giftcard.onrender.com/getgiftcard").then(
       (response) => {
         let result = response.json();
         result.then((res) => setGiftcarddata(res));
